@@ -20,31 +20,23 @@ with
 		    person.gender = 'male'
     )
 (
-	select
-		pizzeria_name
-	from
-		woman_visited
+	select pizzeria_name
+	from woman_visited
 	
 	except all
 
-	select
-		pizzeria_name
-	from
-		man_visited )
+	select pizzeria_name
+	from man_visited )
 
 union all
 
 (
-	select
-		pizzeria_name
-	from
-		man_visited
+	select pizzeria_name
+	from man_visited
 	
 	except all
 
-	select
-		pizzeria_name
-	from
-		woman_visited
+	select pizzeria_name
+	from woman_visited
 )
 order by 1;

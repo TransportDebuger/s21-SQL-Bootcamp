@@ -21,31 +21,19 @@ with
 		where
 			person.gender = 'male'
 	)
-(select
-	pizzeria_name
-from
-	w_haveorder
+(select pizzeria_name from 	w_haveorder
 
 except
 
-select
-	pizzeria_name
-from
-	m_haveorder
+select pizzeria_name from m_haveorder
 )
 
 union
 
-(select
-	pizzeria_name
-from
-	m_haveorder
+(select pizzeria_name from m_haveorder
 
 except
 
-select
-	pizzeria_name
-from
-	w_haveorder
+select pizzeria_name from w_haveorder
 )
 order by 1;

@@ -20,5 +20,5 @@ from
 where
 	p1.pizza_name = p2.pizza_name and
 	p1.price = p2.price and 
-	p1.pizzeria_name != p2.pizzeria_name and 
+	p1.pizzeria_name <> p2.pizzeria_name and 
 	p1.id > p2.id
