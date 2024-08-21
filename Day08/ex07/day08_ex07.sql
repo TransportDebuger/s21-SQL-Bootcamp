@@ -1,0 +1,24 @@
+-- s1
+BEGIN TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+-- s2
+BEGIN TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+-- s1
+SHOW TRANSACTION ISOLATION LEVEL;
+-- s2
+SHOW TRANSACTION ISOLATION LEVEL;
+-- s1
+UPDATE pizzeria SET rating = 1 WHERE id = 1;
+-- s2
+UPDATE pizzeria SET rating = 2 WHERE id = 2;
+-- s1
+UPDATE pizzeria SET rating = 1 WHERE id = 2;
+-- s2
+UPDATE pizzeria SET rating = 2 WHERE id = 1;
+-- s1
+COMMIT;
+-- s2
+COMMIT;
+-- s1
+SELECT * FROM pizzeria;
+-- s2
+SELECT * FROM pizzeria;
